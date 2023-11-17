@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .jumbotron {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 40px 0;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .jumbotron h2 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .container {
+            height: 650px;
+        }
+
+        .col-md-12 {
+            margin-bottom: 20px;
+        }
+
+        .text-primary {
+            color: #007bff !important;
+        }
+
+        #cityDiv {
+            width: 60%;
+            margin: auto;
+        }
+
+        .form-control {
+            height: 40px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        #submitCity {
+            height: 40px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        #error {
+            display: block;
+            color: #dc3545;
+            margin-top: 10px;
+        }
+
+        #showWeather {
+            display: none; /* Initially hide */
+            width: 60%;
+            margin: auto;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h2 class="font-weight-bold">Get Current Weather Information</h2>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <h3 class="text-primary">Enter City Name</h3>
+                <span id="error" class="text-danger"></span>
+            </div>
+            
+            <div class="row form-group form-inline" id="cityDiv">
+                <input type="text" name="city" id="city" class="form-control" placeholder="Enter city name">
+                <button id="submitCity" class="btn btn-primary">Search City</button>
+            </div>
+        </div>
+        
+        <div id="showWeather" class="mt-5"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#city").keyup(function(event) {
+                // Check if the Enter key is pressed (keyCode 13)
+                if (event.keyCode === 13) {
+                    getWeather();
+                }
+            });
+
+            $("#submitCity").click(function(){
+                getWeather();
+            });
+        });
+
+        function getWeather(){
+            var city = $("#city").val();
+
+            if(city != ''){
+                $.ajax({
+                    url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25",
+                    type: "GET",
+                    dataType: "jsonp",
+                    success: function(data){
+                        var widget = showResults(data)
+                        $("#showWeather").html(widget);
+                        $("#showWeather").show(); // Show weather information
+                        $("#city").val('');
+                    }
+                });
+            } else {
+                $("#error").html("<div class='alert alert-danger' id='errorCity'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>City field cannot be empty</div>");
+            }
+        }
+
+        function showResults(data){
+            return  '<h2 style="font-weight:bold; font-size:30px; padding-top:20px;" class="text-center">Current Weather for '+data.name+', '+data.sys.country+'</h2>'+
+                    "<h3 style='padding-left:40px;'><strong>Weather</strong>: "+data.weather[0].main+"</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Description</strong>:<img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'> "+data.weather[0].description+"</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Temperature</strong>: "+data.main.temp+" &deg;C</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Pressure</strong>: "+data.main.pressure+" hpa</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Humidity</strong>: "+data.main.humidity+"%</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Min Temperature</strong>: "+data.main.temp_min+"&deg;C</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Max Temperature</strong>: "+data.main.temp_max+"&deg;C</h3>"+
+                    "<h3 style='padding-left:40px;'><strong>Wind Speed</strong>: "+data.wind.speed+"m/s</h3>"+
+                    "<h3 style='padding-left:40px; padding-bottom:30px;'><strong>Wind Direction</strong>: "+data.wind.deg+"&deg;</h3>";
+        }
+    </script>
+</body>
+</html>
