@@ -1,0 +1,221 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Apply a font family for the entire document */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Global styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Header styles */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .nav_top {
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo a {
+    text-decoration: none;
+  }
+  
+  .nav_side {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav_side a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Slide styles */
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .slide_container {
+    position: relative;
+  }
+  
+  .carousel-inner .item {
+    width: 100%;
+  }
+  
+  .item_img img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Right content styles */
+  .right {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Contact Details styles */
+  h2 {
+    color: black;
+    margin-left: 70px;
+  }
+  
+  .popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 50%;
+    font-weight: bolder;
+  }
+  
+  .popup-content button {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer_logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer_logo img {
+    width: 20px;
+  }
+  
+  .pages a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .contact a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  /* Form styles */
+  .feed h2 {
+    color: black;
+  }
+  
+  .feed_form {
+    margin-left: 70px;
+  }
+  
+  .feed_form input,
+  .feed_form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .feed_form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Other styles */
+  .show {
+    display: block;
+  }
+  
+  /* Media queries for responsive design can be added here */
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    /* Adjust navigation styles for smaller screens */
+    .nav {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .nav_side {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .nav_side a {
+      display: block;
+    }
+    
+    /* Adjust slide styles for smaller screens */
+    .slide {
+      height: 200px;
+    }
+    
+    .slide_content h2 {
+      font-size: 1.5em;
+    }
+    
+    /* Adjust right content styles for smaller screens */
+    .right {
+      padding: 10px;
+    }
+    
+    /* Adjust Contact Details styles for smaller screens */
+    h2, .popup-content {
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Further adjustments for even smaller screens */
+    .nav_top {
+      display: block;
+      text-align: center;
+    }
+    
+    .nav_side a {
+      font-size: 0.8em;
+    }
+    
+    .slide_content h2 {
+      font-size: 1.2em;
+    }
+    
+    .right h3 {
+      font-size: 1.2em;
+    }
+  }
+    
