@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Science Department</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        /* CSS for the login modal and profile icon */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333; /* Dark text color */
+            background-color: #f0f0f0; /* Background color */
+        }
+    
+        .login-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000; /* Ensure it's on top */
+        }
+    
+        .login-icon i {
+            font-size: 24px;
+            cursor: pointer;
+            color: #555; /* Icon color */
+        }
+    
+        .login-icon i:hover {
+            color: #000; /* Hover color */
+        }
+    
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            padding: 30px;
+            background-color: #fff; /* Modal background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+            max-width: 400px; /* Adjust the max width as needed */
+            width: 80%; /* Adjust the width as needed */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 999; /* Ensure it's on top */
+        }
+    
+        .login-modal .close-modal {
+            float: right;
+            cursor: pointer;
+            color: #555; /* Close icon color */
+        }
+    
+        .login-modal .close-modal:hover {
+            color: #000; /* Hover color for close icon */
+        }
+    
+        /* Style for the text input */
+        /* Existing styles for login modal and profile icon (from previous code) */
+
+        /* Style for the text input */
+        .text-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px; /* Rounded corners */
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+            margin-bottom: 20px; /* Add some space between inputs */
+            font-size: 16px;
+        }
+    
+        .text-input:focus {
+            border-color: #3498db; /* Border color on focus */
+        }
+    
+        /* Style for the login button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: #3498db; /* Button background color */
+            color: #fff; /* Button text color */
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        button[type="submit"]:hover {
+            background-color: #2980b9; /* Button background color on hover */
+        }
+    
+        /* Style for the logout link */
+        .logout-link a {
+            color: #3498db; /* Logout link color */
+            text-decoration: none;
+            font-size: 16px;
+        }
+    
+        .logout-link a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+     <script>
+        // Function to show the login modal
+        function showLoginModal() {
+            const loginModal = document.getElementById('login-modal');
+            loginModal.style.display = 'block';
+        }
+
+        // Function to close the login modal
+        function closeLoginModal() {
+            const loginModal = document.getElementById('login-modal');
+            loginModal.style.display = 'none';
+        }
+
+        // Function to simulate login
+        function login() {
+            alert('Login successful!');
+        }
+
+        // Function to simulate logout
+        function logout() {
+            alert('Logout successful!');
+        }
+
+        // Function to simulate registration
+        function register() {
+            alert('Registration successful!');
+        }
+    </script>
+</head>
+<body>
+    <div class="titlebar flex"></div>
+    <nav>
+        <div class="main-nav flex">
+            <a href="#" class="jngec-Logo">
+                <img src="logo\logo1.webp" alt="Jngec-logo" width="100px">
+            </a>
+
+            <div class="navlinks">
+                <ul class="flex">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#shiningAlumini">Shining Alumni</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://kit.fontawesome.com/41e4d9bf41.js" crossorigin="anonymous"></script>
+    <div class="titlebar flex"></div>
+        
+    <header>
+        <div class="slider ">
+            <img src="image slider/about-usq.jpg" alt="Image 1">
+            <img src="image slider/imgs1.jpg" alt="Image 2">
+            <img src="image slider/img2.webp" alt="Image 3">
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="about flex container">
+            <div class="leftpart ">
+                <h1>
+                    Welcome to Social Science
+                </h1>
+                <h2 >
+                    About The Department
+                </h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti similique doloremque inventore harum cumque voluptatum adipisci cupiditate quos illum obcaecati, animi expedita neque odio optio vel magni nisi facere quo!
+                     placeat, cumque error possimus repellat voluptatibus, illum magnam 
+                </p>
+            </div>
+            <div class="rightpart">
+                <img src="image slider\about-usq.jpg" alt="college-photo">
+            </div>
+        </div>
+    </section>
+
+    <section class="not">
+        <div class="container flex events" >
+            <div class="Anoucements">
+                <h2 class="heading">Anoucements</h2>
+                <hr>
+                <div class="scroll">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="LatestNews">
+                <h2 class="heading">Latest News</h2>
+                <hr>
+                <div class="scroll">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem ad aliquid, ab soluta iste, eum facilis expedita assumenda dolore ipsam ratione odio saepe corporis obcaecati reiciendis, minima nam? Saepe, rem?</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shiningAlumini">
+        <div class="alumini flex container">
+            <div class="left-part flex">
+                <h2 id="heading">Our Shining Aluminis</h2>
+                <p id="Subheading">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores quam quibusdam officiis consequatur natus quidem voluptates nobis eveniet fugit
+                </p>
+            </div>
+            <div class="gallery">
+                <div class="box" >
+                    <img src="shinnig Alumini\dur.jpeg" alt="1">
+                    <p id="t">Durai Sundar<br>computational biologist</p>
+                </div>
+                <div class="box" >
+                    <img src="shinnig Alumini\Kes.jpeg" alt="1">
+                    <p id="t">Kesava Reddy<br>Telugu novelist</p>
+                </div>
+                <div class="box" >
+                    <img src="shinnig Alumini\pra.jpeg" alt="1">
+                    <p id="t">Pramod Kesav N<br>Writer and Author</p>
+                </div>
+                <div class="box" >
+                    <img src="shinnig Alumini\sam.jpeg" alt="1">
+                    <p id="t">Sampadananda Mishra<br>Sanskirt Scholar</p>
+                </div>
+                <div class="box" >
+                    <img src="shinnig Alumini\sha.jpeg" alt="1">
+                    <p id="t">Shaktiman Singh<br>Geo-Scientisct</p>
+                </div>
+                <div class="box" >
+                    <img src="shinnig Alumini\sus.jpeg" alt="1">
+                    <p id="t">Sushrut Badhe<br>Sanskirit Scholar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="EceGallery">
+        
+    </section>
+
+    <footer class="footer">
+        <div class="container footerele flex">
+            <div class="columnlinks">
+                <h3>Important links</h3>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+            </div>
+            <div class="columnlinks">
+                <h3>Important links</h3>
+                <li><a href="#"><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+            </div>
+            <div class="columnlinks">
+                <h3>Important links</h3>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+                <li><a href="#">www.pondiun.edu.in</a></li>
+            </div>
+        </div>
+    </footer>
+
+    <div class="container">
+        <div class="flex subfooter container">
+            <a href="#">Privacy</a>
+            <a href="#">Terms And Conditions</a>
+            <a href="#">Security</a>
+        </div>
+    </div>
+
+    <div class="login-icon" onclick="showLoginModal()">
+        <i class="fa fa-user"></i>
+    </div>
+
+    <!-- Login modal -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-content">
+            <span class="close-modal" id="close-modal" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form action="login.php" onsubmit="login(); return false;">
+                <div class="input-field">
+                    <input type="text" placeholder="Email" required class="text-input">
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Password" required class="text-input">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="logout-link">
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+            <div class="register-link">
+                <a href="register.html" onclick="register()">Register</a>
+            </div>
+            <div id="profile-link" class="logout-link">
+                <a href="#">Welcome, [Username]</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling login modal and profile icon
+        const profileLink = document.getElementById('profile-link');
+        const loginModal = document.getElementById('login-modal');
+        const closeModal = document.getElementById('close-modal');
+    
+        profileLink.addEventListener('click', () => {
+            loginModal.style.display = 'block';
+        });
+    
+        closeModal.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+    </script>
+</body>
+<script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById("dropdown");
+        dropdown.classList.toggle("show");
+    }
+</script>
+</html>
