@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <br>
+    <button class="function-btn" onclick="clearDisplay()">C</button>
+    <button class="function-btn" onclick="backspace()">←</button>
+    <button class="operator-btn" onclick="appendCharacter('/')">/</button>
+    <button class="operator-btn" onclick="appendCharacter('*')">*</button>
+    <br>
+    <button onclick="appendCharacter('7')">7</button>
+    <button onclick="appendCharacter('8')">8</button>
+    <button onclick="appendCharacter('9')">9</button>
+    <button class="operator-btn" onclick="appendCharacter('-')">-</button>
+    <br>
+    <button onclick="appendCharacter('4')">4</button>
+    <button onclick="appendCharacter('5')">5</button>
+    <button onclick="appendCharacter('6')">6</button>
+    <button class="operator-btn" onclick="appendCharacter('+')">+</button>
+    <br>
+    <button onclick="appendCharacter('1')">1</button>
+    <button onclick="appendCharacter('2')">2</button>
+    <button onclick="appendCharacter('3')">3</button>
+    <button class="equal-btn" onclick="calculate()">=</button>
+    <br>
+    <button onclick="appendCharacter('0')">0</button>
+    <button class="operator-btn" onclick="appendCharacter('.')">.</button>
+    <button class="operator-btn" onclick="appendCharacter('(')">(</button>
+    <button class="operator-btn" onclick="appendCharacter(')')">)</button>
+    <br>
+    <button class="function-btn" onclick="calculateSquareRoot()">√</button>
+    <button class="function-btn" onclick="calculateLog()">log</button>
+    <button class="function-btn" onclick="calculateSin()">sin</button>
+    <button class="function-btn" onclick="calculateCos()">cos</button>
+    <button class="function-btn" onclick="calculateTan()">tan</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
