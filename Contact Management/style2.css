@@ -1,0 +1,416 @@
+/* Navbar */
+.nav {
+    background-color: #222;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    flex: 1;
+    text-align: left;
+}
+
+.logo img {
+    width: 80px;
+}
+
+/* Navigation Links */
+.nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.5s;
+}
+
+.nav-links a:hover {
+    color: #ff6b6b;
+}
+
+/* Slide Section */
+.slide {
+    background-image: url("images/back.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.slide h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.slide h2 span {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Slide Buttons */
+.slide-btns {
+    margin-top: 20px;
+}
+
+.slide-btns a {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.slide-btns a:hover {
+    background-color: #fff;
+    color: #ff6b6b;
+}
+
+/* Main Content Section */
+.main {
+    background-image: url("images/back.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px;
+    text-align: center;
+}
+
+.main h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: inline;
+    padding: 10px 20px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Product Section */
+.product {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.product h2 {
+    font-size: 2.5rem;
+    color: #5c002f;
+}
+
+.product .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product .product-item {
+    flex: 1;
+    border: 1px solid #ffbdA5;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.product .product-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product .product-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product .product-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.product .product-title {
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+.product .product-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+.product .product-link {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #d4006a;
+    border: 2px solid #d4006a;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.product .product-link:hover {
+    background-color: #d4006a;
+    color: #fff;
+}
+
+/* Key Points Section */
+.keypoint {
+    padding: 20px;
+    text-align: center;
+}
+
+.keypoint h2 {
+    font-size: 2.5rem;
+    color: #5c002f;
+}
+
+.keypoint .key-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.keypoint .key-content {
+    flex: 1;
+    padding: 20px;
+    border-left: 2px solid #a10053;
+    color: #250013;
+}
+
+.keypoint .key-content li {
+    list-style: none;
+    margin: 15px 0;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.keypoint .key-img {
+    flex: 1;
+}
+
+.keypoint .key-img img {
+    width: 100%;
+}
+
+/* Team Section */
+.team {
+    padding: 50px;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    color: #5c002f;
+}
+
+.team .team-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.team .team-member {
+    flex: 1;
+}
+
+.team .team-member img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #a10053;
+}
+
+.team .team-member h3 {
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+.team .team-member p {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+/* Feed Section */
+.feed {
+    background-image: url("images/feed.jpg");
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.feed h2 {
+    font-size: 2.5rem;
+    color: #5c002f;
+}
+
+.feed .feed-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.feed .feed-form form {
+    padding: 20px;
+}
+
+.feed .feed-form input,
+.feed .feed-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #a10053;
+    background-color: transparent;
+    color: #fff;
+}
+
+.feed .feed-form button {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background-color: #a10053;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feed .feed-form button:hover {
+    background-color: #fff;
+    color: #a10053;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 50px;
+}
+
+footer .pages,
+footer .doc,
+footer .social,
+footer .contact {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+footer a {
+    text-decoration: none;
+    margin: 10px;
+    color: rgba(255, 226, 243, 0.808);
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer .social a,
+footer .contact a {
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+footer .social a:hover,
+footer .contact a:hover {
+    color: #fff;
+}
+
+footer p {
+    font-size: 1rem;
+    color: rgba(247, 178, 217, 0.726);
+}
+
+/* About Us Section */
+.about_us {
+    padding: 100px;
+    text-align: center;
+}
+
+.about_us h2 {
+    font-size: 2.5rem;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+.about_us h5 {
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+about_us p {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+/* Contact Container Section */
+.contact_container {
+    padding: 100px;
+    text-align: center;
+}
+
+.contact_container h2 {
+    font-size: 2.5rem;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
+
+.contact_container .g_map {
+    border: 10px solid #5c002f;
+}
+
+.contact_container .contact_content {
+    padding: 20px;
+}
+
+.contact_container .contact_content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    color: #5c002f;
+}
