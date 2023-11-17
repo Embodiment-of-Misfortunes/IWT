@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book API Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        li {
+            background-color: #34495e;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        li:hover {
+            transform: translateY(15px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-cover {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .book-details {
+            flex: 1;
+        }
+
+        .download-link {
+            display: block;
+            margin-top: 5px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-link:hover {
+            background-color: #c0392b;
+        }
+
+        #book-list.show {
+            opacity: 1;
+        }
+
+        #book-list.show li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Search</h1>
+    <input type="text" id="search-input" placeholder="Enter book title">
+    <button id="search-button">Search</button>
+    <ul id="book-list"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $("#search-button").on("click", function() {
+                var searchTerm = $("#search-input").val();
+                if (searchTerm.trim() !== "") {
+                    var apiUrl = "https://openlibrary.org/search.json?q=" + searchTerm;
+
+                    $.ajax({
+                        url: apiUrl,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            var books = data.docs;
+                            displayBooks(books);
+                        },
+                        error: function() {
+                            alert("Failed to load books. Please try again later.");
+                        }
+                    });
+                }
+            });
+
+            function displayBooks(books) {
+                var bookList = $("#book-list");
+                bookList.empty();
+
+                if (books && books.length > 0) {
+                    $.each(books, function(index, book) {
+                        var title = book.title ? "Title: " + book.title : "Title: N/A";
+                        var author = book.author_name ? "Author: " + book.author_name[0] : "Author: N/A";
+                        var openLibraryKey = book.cover_i;
+                        var coverUrl = "https://covers.openlibrary.org/b/id/" + openLibraryKey + "-M.jpg";
+
+                        var listItem = $("<li>");
+
+                        var bookCover = $("<img>")
+                            .addClass("book-cover")
+                            .attr("src", coverUrl);
+
+                        var bookDetails = $("<div>").addClass("book-details");
+                        bookDetails.append($("<p>").text(title));
+                        bookDetails.append($("<p>").text(author));
+
+                        var downloadButton = $("<button>")
+                            .addClass("download-link")
+                            .on("click", function() {
+                                window.open("https://openlibrary.org/" + book.key + "/epub");
+                            })
+                            .text("Download");
+
+                        listItem.append(bookCover);
+                        listItem.append(bookDetails);
+                        listItem.append(downloadButton);
+                        bookList.append(listItem);
+                    });
+
+                    // Add classes to trigger the fade-in effect
+                    bookList.addClass("show");
+                } else {
+                    bookList.append("<li>No books found.</li>");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
